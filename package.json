@@ -1,0 +1,28 @@
+{
+  "name": "detach",
+  "private": true,
+  "packageManager": "pnpm@11.22.0",
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=9"
+  },
+  "scripts": {
+    "dev": "pnpm --parallel --filter \"./apps/*\" dev",
+    "dev:storefront": "pnpm --filter @detach/storefront dev",
+    "dev:admin": "pnpm --filter @detach/admin dev",
+    "dev:backend": "pnpm --filter @detach/backend start:dev",
+    "build": "pnpm --filter @detach/shared build && pnpm --filter \"./apps/*\" build",
+    "build:storefront": "pnpm --filter @detach/storefront build",
+    "build:admin": "pnpm --filter @detach/admin build",
+    "build:backend": "pnpm --filter @detach/backend build",
+    "lint": "pnpm -r --if-present lint",
+    "lint:fix": "pnpm -r --if-present lint:fix",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.3"
+  }
+}
